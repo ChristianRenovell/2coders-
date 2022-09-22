@@ -6,11 +6,11 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
-import {PasswordModule} from 'primeng/password';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   {
-    path: 'login', component: LoginComponent
+    path: '', component: LoginComponent
   }
 ];
 
@@ -19,7 +19,7 @@ const routes: Routes = [
     LoginComponent
   ],
   imports: [
-    PasswordModule,
+    SharedModule,
     ReactiveFormsModule,
     FormsModule,
     InputTextModule,
@@ -27,7 +27,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: []
 })
 export class LoginModule {
 

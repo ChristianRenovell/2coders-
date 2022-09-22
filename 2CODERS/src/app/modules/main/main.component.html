@@ -1,1 +1,7 @@
-<p>main works!</p>
+<p-sidebar [(visible)]="display">
+  Content
+</p-sidebar>
+
+<p-button type="text" (click)="display = true" icon="pi pi-plus" label="Show"></p-button>
+
+<app-carousel></app-carousel>
