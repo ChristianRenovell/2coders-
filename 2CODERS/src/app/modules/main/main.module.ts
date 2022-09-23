@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselModule } from './carousel/carousel.module';
 
 const routes: Routes = [
   {
@@ -11,17 +11,17 @@ const routes: Routes = [
   }
 ];
 
-
 @NgModule({
   declarations: [
     MainComponent,
-    CarouselComponent
   ],
   imports: [
+    CarouselModule,
     SharedModule,
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  exports:[RouterModule]
+  exports:[RouterModule],
+  providers: []
 })
 export class MainModule { }

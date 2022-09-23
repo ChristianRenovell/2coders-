@@ -2,6 +2,7 @@
 
 export const environment = {
   production: false,
-  API: "b6eb27f5d31a62f7951c900aae7a590f"
+  TOKEN: "b6eb27f5d31a62f7951c900aae7a590f",
+  URL: "https://api.themoviedb.org/3/movie/"
 };
 
