@@ -1,3 +1,32 @@
-.p-carousel-indicators {
-  display: none;
+h4 {
+  margin-left: 50px;
 }
+
+.card-movie {
+  height: 250px;
+  width: 150px;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;	
+  margin: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.card-movie-info {
+  height: 251px;
+  width: 151px;
+  border-radius: 30px;
+  opacity: 0;
+  padding: 10px;
+  padding-top: 80px;
+}
+
+.card-movie-info:hover {
+  background-color: rgba(0, 0, 0, 0.568);
+  border-radius: 30px;
+  opacity: 1;
+  z-index: 900;
+}
+
+

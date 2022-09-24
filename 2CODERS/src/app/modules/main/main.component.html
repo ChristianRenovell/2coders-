@@ -1,7 +1,14 @@
-<p-sidebar [(visible)]="display">
-  Content
-</p-sidebar>
+<p-sidebar [(visible)]="display"></p-sidebar>
+<p-button type="text" (click)="display = true" icon="pi pi-bars"></p-button>
+<div>
+  <h1>CABECERA</h1>
+</div>
 
-<p-button type="text" (click)="display = true" icon="pi pi-plus" label="Show"></p-button>
-
-<app-carousel></app-carousel>
+<div class="list-movie-content">
+  <p-tabView (onChange)="handleChange($event)">
+    <p-tabPanel [header]="categori.header" *ngFor="let categori of categories; let i = index" [selected]="i == 0">
+      <h3>{{categori.name}}</h3>
+      <app-carousel (endpoint)="categori.endpoint" (messageEvent)="receiveMessage($event)"></app-carousel>
+    </p-tabPanel>
+  </p-tabView>
+</div>

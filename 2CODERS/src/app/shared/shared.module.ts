@@ -8,8 +8,10 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {CarouselModule} from 'primeng/carousel';
 import {SidebarModule} from 'primeng/sidebar';
+import {RatingModule} from 'primeng/rating';
 
 const primeMgComponets = [
+  RatingModule,
   PasswordModule,
   CardModule,
   CheckboxModule,

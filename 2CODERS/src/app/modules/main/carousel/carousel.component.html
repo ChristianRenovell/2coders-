@@ -1,5 +1,18 @@
-<p-carousel [value]="cards">
-  <ng-template let-car pTemplate="item">
-      {{car}}
+<p-carousel [value]="movieList" [numVisible]="7" [numScroll]="1" [showIndicators]="false">
+  <ng-template let-movie pTemplate="movie">
+    <div (click)="sendMessage(movie.id)" class="card-movie"
+      style="background-image: url({{urlMovies + movie.poster_path}});">
+      <div class="card-movie-info">
+        <div class="p-fluid grid">
+          <div class="field col-12">
+            <h3>{{movie.original_title}}</h3>
+            <h5>{{movie.release_date}}</h5>
+          </div>
+          <div class="field col-12">
+           
+          </div>
+        </div>
+      </div>
+    </div>
   </ng-template>
 </p-carousel>

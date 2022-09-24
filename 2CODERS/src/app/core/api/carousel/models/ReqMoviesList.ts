@@ -1,9 +1,9 @@
-export interface ReqMoviesList {
+export interface ResMoviesList {
   page: number;
-  result: Result[];
+  results: Results[];
 }
 
-export interface Result {
+export interface Results {
   poster_path: string,
   adult: boolean,
   overview: string,

@@ -4,6 +4,7 @@ import { MainComponent } from './main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CarouselModule } from './carousel/carousel.module';
+import {TabViewModule} from 'primeng/tabview';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
     MainComponent,
   ],
   imports: [
+    TabViewModule,
     CarouselModule,
     SharedModule,
     CommonModule,
