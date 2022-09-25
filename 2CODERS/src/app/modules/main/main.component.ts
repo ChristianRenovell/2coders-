@@ -3,7 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { tabsCategories } from '@app/shared/constants/endPoints';
 import { MainService } from '@app/core/api/main/main.service';
 import { SearchComponent } from '../search/search.component';
-import { ThisReceiver } from '@angular/compiler';
+import { ResMoviesList } from '@app/core/api/carousel/models/ReqMoviesList';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -19,7 +20,8 @@ export class MainComponent implements OnInit {
 
   display: boolean = false;
   categories: any = tabsCategories;
-  movielList: any;
+  movielList: ResMoviesList | undefined;
+  initComponent: boolean = true;
 
   constructor(
     private mainService: MainService
@@ -29,25 +31,20 @@ export class MainComponent implements OnInit {
     this.getMovieList();
   }
 
-  receiveMessage($event: any) {
-    console.log($event)
-  }
-
   handleChange(category: any) {
     this.getMovieList(tabsCategories[category.index].endpoint);
   }
 
   getMovieList(category: any = tabsCategories[0].endpoint) {
     this.mainService.getMoviesDetail(category).subscribe(res => {
-      this.movielList = res.results;
-      this.childCarousel.movieList = this.movielList;
-      this.childSearch.randonImage = this.movielList[this.randonIndex()].poster_path;
+      this.movielList = res;
+      this.childCarousel.updateMovieList(this.movielList.results);
+      if(this.initComponent) this.childSearch.randonImage = this.movielList.results[this.randonIndex()].poster_path;
+      this.initComponent = false;
     })
   }
 
   randonIndex():number {
     return Math.floor(Math.random() * 20)
   }
-
-
 }

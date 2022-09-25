@@ -1,6 +1,7 @@
 import { environment } from './../../../environments/environment';
 import { SearchService } from './../../core/api/search/search.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DetailComponent } from '../main/details/detail.component';
 
 @Component({
   selector: 'app-search',
@@ -9,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  inputSearch: string = "";
-  results!: string[];
-  randonImage: string = "/eqhKMZTLcieAvoH6CBqknTTfNby.jpg";
+  @ViewChild(DetailComponent)
+  child!: DetailComponent;
+
+  inputSearch: any = "";
+  results!: any[];
+  randonImage: string = environment.DEFAULT_MAIN_IMAG;
   urlMovies: string = environment.URL_IMAGE_XL;
 
   constructor(
@@ -21,8 +25,14 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search(event: { query: any; }) {
+  searchMovie(event: { query: any; }) {
+    this.searchService.getSearchMovies(event.query).subscribe(res=>{
+      this.results = res.results;
+    })
+  }
 
-}
-
+  selectedMovie() {
+    this.child.openModalDialog(this.inputSearch.id);
+  }
+  
 }

@@ -8,7 +8,7 @@
   <p-tabView (onChange)="handleChange($event)">
     <p-tabPanel [header]="categori.header" *ngFor="let categori of categories; let i = index" [selected]="i == 0">
       <h3>{{categori.name}}</h3>
-      <app-carousel (endpoint)="categori.endpoint" (messageEvent)="receiveMessage($event)"></app-carousel>
     </p-tabPanel>
+    <app-carousel (movielList)="movielList"></app-carousel>
   </p-tabView>
 </div>

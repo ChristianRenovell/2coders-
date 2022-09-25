@@ -5,10 +5,11 @@
         <span class="block text-6xl font-bold mb-1">Bienvenidos.</span>
         <div class="text-3xl text-primary font-bold mb-3">Millones de películas, programas de televisión por descubrir. Explora ahora.</div>
         <div class="col-12 md:col-12" style="width: 100%">
-          <button type="button" pButton pRipple label="Buscar"></button>
-          <p-autoComplete [(ngModel)]="inputSearch" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+          <button  type="button" pButton pRipple label="Buscar"></button>
+          <p-autoComplete (onSelect)="selectedMovie()" [(ngModel)]="inputSearch" field="original_title" [suggestions]="results" (completeMethod)="searchMovie($event)"></p-autoComplete>
         </div>
       </section>
     </div>
   </div>
 </div>
+<app-detail></app-detail>
