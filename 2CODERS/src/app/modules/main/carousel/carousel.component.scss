@@ -29,4 +29,16 @@ h4 {
   z-index: 900;
 }
 
+.info-card {
+  max-width: 150px;
+  position: relative;
+  transform: translateY(-40px);
+}
+
+.badges{
+  opacity: 1;
+  position: absolute;
+  transform: translateY(-55px);
+  margin-left: 95px;
+}
 

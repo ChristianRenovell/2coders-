@@ -9,8 +9,12 @@ import {InputTextModule} from 'primeng/inputtext';
 import {CarouselModule} from 'primeng/carousel';
 import {SidebarModule} from 'primeng/sidebar';
 import {RatingModule} from 'primeng/rating';
+import {BadgeModule} from 'primeng/badge';
+import {DialogModule} from 'primeng/dialog';
 
 const primeMgComponets = [
+  DialogModule,
+  BadgeModule,
   RatingModule,
   PasswordModule,
   CardModule,

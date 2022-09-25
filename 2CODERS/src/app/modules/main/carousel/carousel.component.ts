@@ -1,7 +1,8 @@
 import { tabsCategories } from '@app/shared/constants/endPoints';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { CarouselService } from '@app/core/api/carousel/carousel.service';
 import { environment } from '@environments/environment';
+import { DetailComponent } from '../details/detail.component';
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -10,12 +11,13 @@ import { environment } from '@environments/environment';
 export class CarouselComponent implements OnInit {
 
   @Output() messageEvent = new EventEmitter<number>();
+  @ViewChild(DetailComponent)
+  child!: DetailComponent;
 
   @Input()
   movieList!: any;
   urlMovies: string = environment.URL_IMAGE;
   idMovie: number | undefined;
-  val4: number = 5;
 
   constructor(
     private carouselService: CarouselService
@@ -25,19 +27,18 @@ export class CarouselComponent implements OnInit {
     this.getMoviesList();
   }
 
-  sendMessage(id: any) {
-    this.messageEvent.emit(id)
-  }
-
   getMoviesList(category: string = tabsCategories[0].endpoint): void {
     this.carouselService.getMovies(category).subscribe(res => {
       this.movieList = res.results;
       this.idMovie = this.movieList[0].id;
-      this.sendMessage(this.movieList[0].id);
     })
   }
 
   getCategoriMovie(category: string) {
     this.getMoviesList(category);
+  }
+
+  openDetailMovie(id: number) {
+    this.child.openModalDialog(id);
   }
 }

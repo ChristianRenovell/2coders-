@@ -16,7 +16,7 @@ const routes: Routes = [
   declarations: [
     MainComponent,
   ],
-  imports: [
+  imports: [ 
     TabViewModule,
     CarouselModule,
     SharedModule,
