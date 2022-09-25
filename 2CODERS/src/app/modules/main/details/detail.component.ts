@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailService } from '@app/core/api/detail/detail.service';
+import { ResMoviesDetail } from '@app/core/api/detail/models/ReqMovieDetail';
+import { environment } from '@environments/environment';
 
 
 @Component({
@@ -10,7 +12,13 @@ import { DetailService } from '@app/core/api/detail/detail.service';
 export class DetailComponent implements OnInit {
 
   displayModal: boolean = false;
-
+  detailMovie!: ResMoviesDetail;
+  imageMovie: string = "";
+  title: string = "";
+  tagline: string = "";
+  overview: string = "";
+  rating: number = 3;
+  
   constructor(
     private detailService: DetailService
   ) { }
@@ -21,7 +29,11 @@ export class DetailComponent implements OnInit {
   openModalDialog(id:number) {
     this.displayModal = true;
     this.detailService.getMoviesDetail(id).subscribe(res => {
-      console.log(res)
+      this.detailMovie = res;
+      this.title = this.detailMovie.title;
+      this.tagline = this.detailMovie.tagline;
+      this.overview = this.detailMovie.overview;
+      this.imageMovie = environment.URL_IMAGE + this.detailMovie.poster_path
     })
   }
 
