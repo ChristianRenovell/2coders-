@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CarouselModule } from './carousel/carousel.module';
 import {TabViewModule} from 'primeng/tabview';
+import { SearchModule } from '../search/search.module';
+import { MainService } from '@app/core/api/main/main.service';
 
 const routes: Routes = [
   {
@@ -17,6 +19,7 @@ const routes: Routes = [
     MainComponent,
   ],
   imports: [ 
+    SearchModule,
     TabViewModule,
     CarouselModule,
     SharedModule,
@@ -24,6 +27,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   exports:[RouterModule],
-  providers: []
+  providers: [MainService]
 })
 export class MainModule { }

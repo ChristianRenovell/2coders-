@@ -19,24 +19,9 @@ export class CarouselComponent implements OnInit {
   urlMovies: string = environment.URL_IMAGE;
   idMovie: number | undefined;
 
-  constructor(
-    private carouselService: CarouselService
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.getMoviesList();
-  }
-
-  getMoviesList(category: string = tabsCategories[0].endpoint): void {
-    this.carouselService.getMovies(category).subscribe(res => {
-      this.movieList = res.results;
-      this.idMovie = this.movieList[0].id;
-    })
-  }
-
-  getCategoriMovie(category: string) {
-    this.getMoviesList(category);
-  }
+  ngOnInit(): void {}
 
   openDetailMovie(id: number) {
     this.child.openModalDialog(id);

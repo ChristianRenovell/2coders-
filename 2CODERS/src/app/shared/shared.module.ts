@@ -11,6 +11,7 @@ import {SidebarModule} from 'primeng/sidebar';
 import {RatingModule} from 'primeng/rating';
 import {BadgeModule} from 'primeng/badge';
 import {DialogModule} from 'primeng/dialog';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 
 const primeMgComponets = [
   DialogModule,
@@ -23,7 +24,8 @@ const primeMgComponets = [
   ButtonModule,
   InputTextModule,
   CarouselModule,
-  SidebarModule
+  SidebarModule,
+  AutoCompleteModule
 ]
 
 @NgModule({

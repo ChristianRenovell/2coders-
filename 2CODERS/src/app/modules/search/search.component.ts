@@ -1,3 +1,5 @@
+import { environment } from './../../../environments/environment';
+import { SearchService } from './../../core/api/search/search.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  inputSearch: string = "";
+  results!: string[];
+  randonImage: string = "/eqhKMZTLcieAvoH6CBqknTTfNby.jpg";
+  urlMovies: string = environment.URL_IMAGE_XL;
+
+  constructor(
+    private searchService: SearchService
+  ) { }
 
   ngOnInit(): void {
   }
+
+  search(event: { query: any; }) {
+
+}
 
 }
