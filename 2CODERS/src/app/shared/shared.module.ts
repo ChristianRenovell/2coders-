@@ -12,6 +12,8 @@ import {RatingModule} from 'primeng/rating';
 import {BadgeModule} from 'primeng/badge';
 import {DialogModule} from 'primeng/dialog';
 import {AutoCompleteModule} from 'primeng/autocomplete';
+import {DataViewModule} from 'primeng/dataview';
+import {OrderListModule} from 'primeng/orderlist';
 
 const primeMgComponets = [
   DialogModule,
@@ -25,7 +27,9 @@ const primeMgComponets = [
   InputTextModule,
   CarouselModule,
   SidebarModule,
-  AutoCompleteModule
+  AutoCompleteModule,
+  DataViewModule,
+  OrderListModule
 ]
 
 @NgModule({

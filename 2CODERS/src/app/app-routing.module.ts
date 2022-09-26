@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule)
+  },
+  {
+    path: 'favourites/:movie_id',
+    loadChildren: () => import('./modules/favourites/favourites.module').then(m => m.FavouritesModule)
   }
 ];
 

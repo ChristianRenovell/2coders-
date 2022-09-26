@@ -1,0 +1,36 @@
+<div class="card favourites-content">
+    <h2>Mis Favoritos</h2>
+    <p-orderList [value]="favouritesList" [listStyle]="{'max-height':'30rem'}"
+        filterBy="original_title" [dragdrop]="true">
+        <ng-template let-movie pTemplate="item">
+            <div class="product-item">
+                <div class="container">
+                    <div class="grid">
+                        <div class="col-2">
+                            <div class="image-container">
+                                <img src="{{urlMovies + movie.backdrop_path}}" class="img-favourites" />
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="col-4">
+                                <div class="product-list-detail">
+                                    <h3 class="mb-2">{{movie.original_title}}</h3>
+                                    <span class="product-category">{{movie.release_date}}</span>
+                                    <div class="mt-2">
+                                        <p-rating [readonly]="true" [(ngModel)]="movieRating[movie.id]"
+                                            [cancel]="false"></p-rating>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="product-list-action">
+                                    <h5 class="mb-2">{{movie.overview}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-orderList>
+</div>
