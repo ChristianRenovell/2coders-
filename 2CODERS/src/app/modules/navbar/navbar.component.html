@@ -1,0 +1,26 @@
+<div class="surface-section px-4 py-3 md:px-6 lg:px-8">
+  <div class="flex align-items-center flex-column lg:justify-content-between lg:flex-row">
+    <div>
+      <span class="font-medium text-1xl mr-3">
+        <a [routerLink]="['/app/main']">
+          Peliculas
+        </a>
+      </span>
+      <span class="font-medium text-1xl mr-3">
+        <a [routerLink]="['/app/favourites']">
+          Mis favaritos
+        </a>
+      </span>
+      <span class="font-medium text-1xl mr-3">Mis favaritos</span>
+      <span class="font-medium text-1xl mr-3">Televisión</span>
+      <span class="font-medium text-1xl mr-3">Más</span>
+    </div>
+    <div class="px-1 mt-1" style="color: #FFD54F">
+      <i class="pi pi-plus mr-3"></i>
+      <i class="pi pi-heart mr-3"></i>
+      <i class="pi pi-envelope mr-3"></i>
+      <i class="pi pi-user"></i>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

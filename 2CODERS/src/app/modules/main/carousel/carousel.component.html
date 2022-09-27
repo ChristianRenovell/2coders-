@@ -1,20 +1,16 @@
 <p-carousel [value]="movieList" [numVisible]="7" [numScroll]="1" [showIndicators]="false">
   <ng-template let-movie pTemplate="movie">
     <div (click)="openDetailMovie(movie.id)" class="card-movie"
-      style="background-image: url({{urlMovies + movie.poster_path}});">
+      style="background-image: url({{urlMovies + movie.poster_path}})">
       <div class="card-movie-info">
         <div class="p-fluid grid info-card">
-          <div class=" col-12">
+          <div class="col-12">
             <h3>{{movie.original_title}}</h3>
             <h5>{{movie.release_date}}</h5>
+            <p-knob [min]="0" [max]="100" [(ngModel)]="rating[movie.id]" [size]="50" valueTemplate="{value}%" valueColor="#FFD54F" rangeColor="#e8e8e8"></p-knob>
           </div>
         </div>
       </div>
-      <!--<div class=" col-12">
-        <div class="badges">
-          <p-badge [value]="'6'" size="large" severity="success" styleClass="mr-2"></p-badge>
-        </div>
-      </div>-->
     </div>
   </ng-template>
 </p-carousel>

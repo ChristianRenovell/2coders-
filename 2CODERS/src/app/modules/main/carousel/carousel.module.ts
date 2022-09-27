@@ -5,12 +5,15 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { CarouselComponent } from './carousel.component';
 import { CarouselService } from '@app/core/api/carousel/carousel.service';
 import { DetailModule } from '../details/detail.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     CarouselComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     DetailModule,
     SharedModule,
     CommonModule

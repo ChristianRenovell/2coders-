@@ -1,9 +1,6 @@
-<p-sidebar [(visible)]="display"></p-sidebar>
-<p-button type="text" (click)="display = true" icon="pi pi-bars"></p-button>
 <div>
   <app-search></app-search>
 </div>
-
 <div class="list-movie-content">
   <p-tabView (onChange)="handleChange($event)">
     <p-tabPanel [header]="categori.header" *ngFor="let categori of categories; let i = index" [selected]="i == 0">

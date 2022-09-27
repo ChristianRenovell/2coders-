@@ -1,0 +1,18 @@
+span a{
+  cursor: pointer;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+span {
+  cursor: pointer;
+}
+
+span:hover a{
+  color: #FFD54F;
+}
+
+span:hover {
+  color: #FFD54F;
+}
+
