@@ -5,7 +5,7 @@ export const endPoints = {
 }
 
 export const tabsCategories = [
-  {header: 'Populares', name: 'Los más populares', endpoint: 'popular'},
-  {header: 'Proximos', name: 'Próximo estrenos',endpoint: 'upcoming'},
-  {header: 'Valoraos', name: 'Mejores valorados',endpoint: 'top_rated'}
+  {header: 'Popular', name: 'The most popular', endpoint: 'popular'},
+  {header: 'Upcoming', name: 'Upcoming premieres',endpoint: 'upcoming'},
+  {header: 'Valued', name: 'Top rated',endpoint: 'top_rated'}
 ]

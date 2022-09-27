@@ -1,11 +1,11 @@
 <div class="search-content" style="background-image: url({{urlMovies + randonImage}})">
   <div class="grid grid-nogutter sub-search-content">
-    <div class="col-12  md:col-12 p-4 text-center md:text-left flex align-items-center">
+    <div class="col-12  md:col-12 p-6 text-center md:text-left flex align-items-center">
       <section>
-        <span class="block text-6xl font-bold mb-1">Bienvenidos.</span>
-        <div class="text-3xl text-primary font-bold mb-3">Millones de películas, programas de televisión por descubrir. Explora ahora.</div>
+        <span class="block text-6xl font-bold mb-1">Welcome.</span>
+        <div class="text-3xl text-primary font-bold mb-3">Millions of films, TV shows to discover. Explore now.</div>
         <div class="col-12 md:col-12" style="width: 100%">
-          <button  type="button" pButton pRipple label="Buscar"></button>
+          <button  type="button" pButton pRipple label="Search"></button>
           <p-autoComplete (onSelect)="selectedMovie()" [(ngModel)]="inputSearch" field="original_title" [suggestions]="results" (completeMethod)="searchMovie($event)"></p-autoComplete>
         </div>
       </section>

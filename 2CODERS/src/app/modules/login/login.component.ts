@@ -20,6 +20,6 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
-    this.router.navigate(['./main'])
+    this.router.navigate(['./app/main'])
   }
 }

@@ -2,6 +2,16 @@ h4 {
   margin-left: 50px;
 }
 
+.loading {
+  height: 250px;
+  width: 100%;
+  background-color: rgba(2, 2, 2, 0.216);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-movie {
   height: 250px;
   width: 150px;

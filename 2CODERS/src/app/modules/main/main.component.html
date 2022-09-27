@@ -4,7 +4,6 @@
 <div class="list-movie-content">
   <p-tabView (onChange)="handleChange($event)">
     <p-tabPanel [header]="categori.header" *ngFor="let categori of categories; let i = index" [selected]="i == 0">
-      <h3>{{categori.name}}</h3>
     </p-tabPanel>
     <app-carousel (movielList)="movielList"></app-carousel>
   </p-tabView>

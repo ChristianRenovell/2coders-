@@ -19,6 +19,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   idMovie: number | undefined;
   carouselVisible: boolean = true;
   rating: any[] = [];
+  isLoading: boolean = true;
 
   constructor() { }
 
@@ -43,5 +44,4 @@ export class CarouselComponent implements OnInit, OnDestroy {
     console.log(this.movieList)
     console.log("destruyo componete")
   }
-
 }
