@@ -18,7 +18,7 @@ export class MainService {
   ) { }
 
   getMoviesDetail(movie_id: number, language: string = "en"): Observable<ResMoviesList> {
-    let url = this.apiUrl + movie_id +'?api_key='+ this.token + '&language='+language+'-US';
+    let url = this.apiUrl + movie_id + '?api_key=' + this.token + '&language=' + language + '-US';
     return this.http.get<ResMoviesList>(url);
   }
 }

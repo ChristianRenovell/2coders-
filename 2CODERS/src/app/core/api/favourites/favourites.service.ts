@@ -20,8 +20,8 @@ export class FavouritesService {
   //this call must be to a DB where the user's favourites are stored.
   getList(useMock: boolean = true):any  {
     if (!useMock) {
-      /*let url = this.apiUrl + 'list/1?page=1&api_key=' + this.token;
-      return this.http.get<ResMoviesList>(url);*/
+   
+
     } else {
       return favouritesMock;
     }

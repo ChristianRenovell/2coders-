@@ -17,8 +17,7 @@ export class DetailComponent implements OnInit {
   title: string = "";
   tagline: string = "";
   overview: string = "";
-  rating: number = 3;
-  
+
   constructor(
     private detailService: DetailService
   ) { }
@@ -28,7 +27,7 @@ export class DetailComponent implements OnInit {
 
   openModalDialog(id:number) {
     this.displayModal = true;
-    this.detailService.getMoviesDetail(id).subscribe(res => {
+    this.detailService.getMoviesDetail(id).subscribe((res: ResMoviesDetail) => {
       this.detailMovie = res;
       this.title = this.detailMovie.title;
       this.tagline = this.detailMovie.tagline;

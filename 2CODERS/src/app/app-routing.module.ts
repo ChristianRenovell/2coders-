@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {path: '', redirectTo: "login" , pathMatch: 'full'},
   {
     path: 'login',
-    //component: LoginComponent
     loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule)
   },
   {
@@ -18,7 +18,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-  constructor() {
-    console.log("appReoutingComponent")
-  }
+  constructor() {}
  }

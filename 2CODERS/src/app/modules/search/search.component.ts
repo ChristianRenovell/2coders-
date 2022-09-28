@@ -2,6 +2,7 @@ import { environment } from './../../../environments/environment';
 import { SearchService } from './../../core/api/search/search.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DetailComponent } from '../details/detail.component';
+import { ResMoviesList } from '@app/core/api/carousel/models/ReqMoviesList';
 
 @Component({
   selector: 'app-search',
@@ -26,12 +27,12 @@ export class SearchComponent implements OnInit {
   }
 
   searchMovie(event: { query: any; }) {
-    this.searchService.getSearchMovies(event.query).subscribe(res=>{
+    this.searchService.getSearchMovies(event.query).subscribe((res: ResMoviesList)=>{
       this.results = res.results;
     })
   }
 
-  selectedMovie() {
+  selectedMovie(): void {
     this.child.openModalDialog(this.inputSearch.id);
   }
   
