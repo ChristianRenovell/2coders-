@@ -1,7 +1,7 @@
 import { environment } from './../../../environments/environment';
 import { SearchService } from './../../core/api/search/search.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DetailComponent } from '../main/details/detail.component';
+import { DetailComponent } from '../details/detail.component';
 
 @Component({
   selector: 'app-search',

@@ -1,4 +1,4 @@
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from '../carousel/carousel.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { tabsCategories } from '@app/shared/constants/endPoints';
 import { MainService } from '@app/core/api/main/main.service';

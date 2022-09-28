@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { CarouselModule } from './carousel/carousel.module';
+import { CarouselModule } from '../carousel/carousel.module';
 import { TabViewModule } from 'primeng/tabview';
 import { SearchModule } from '../search/search.module';
 import { MainService } from '@app/core/api/main/main.service';
